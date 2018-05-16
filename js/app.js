@@ -62,14 +62,18 @@ Player.prototype.update = function() {
 
     //Check to see if we won
     if (this.y === -35){
-        this.x = 200;
-        this.y = 380;
+    	setTimeout( function(){
+        	alert("You Won!");
+    	}, 100);
+    	 this.x = 200;
+         this.y = 380;
     }
 };
 
 // Draw the player on the screen, required method for game
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
 };
 
 //This moves the player based on teh kep ressed base on the x and y coordinates
