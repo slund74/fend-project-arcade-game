@@ -52,11 +52,17 @@ var Player = function(x, y) {
 Player.prototype.update = function() {
 
     //Keep the player on the board
-    if (this.x <= -4){
+    if (this.x > 404 && this.y > 380){
+    	this.x = 404;
+    	this.y = 380;
+    } else if (this.x < -4 && this.y > 380){
+   		this.x = -4;
+    	this.y = 380;
+    } else if (this.x < -4){
         this.x = -4
-    } else if (this.x >= 404){
+    } else if (this.x > 404){
         this.x = 404;
-    } else if (this.y >= 380){
+    } else if (this.y > 380){
         this.y = 380;
     }
 
